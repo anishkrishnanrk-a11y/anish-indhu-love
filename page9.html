@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <style>
+        .stack-container {
+            position: relative;
+            width: 300px; /* Slightly wider for better desktop feel */
+            height: 400px;
+            margin: 40px auto;
+            perspective: 1000px;
+        }
+        .polaroid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            padding: 15px 15px 60px 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            cursor: grab;
+            transition: transform 0.5s ease-out, opacity 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            touch-action: none; 
+            user-select: none;
+            /* Stacked effect: slight rotation for realism */
+        }
+        .polaroid:nth-child(even) { transform: rotate(-1deg); }
+        .polaroid:nth-child(odd) { transform: rotate(1.5deg); }
+        
+        .polaroid:active { cursor: grabbing; }
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid #eee;
+            pointer-events: none;
+        }
+        .polaroid span {
+            font-family: 'Dancing Script', cursive;
+            color: #444;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="login-container page-fade-in">
+        <h2 class="romantic-title">Our 10 Favorite Moments</h2>
+        
+        <div class="stack-container" id="photo-stack">
+            <div class="glass-box" style="position: absolute; width: 100%; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+                <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #ffccd5;">
+                    These photos aren't enough to show how much I love you. ❤️
+                </p>
+            </div>
+
+            <div class="polaroid" style="z-index: 2;"> <img src="photo16.jpg"> <span>Forever starts now...</span> </div>
+            <div class="polaroid" style="z-index: 3;"> <img src="photo15.jpg"> <span>My peace...</span> </div>
+            <div class="polaroid" style="z-index: 4;"> <img src="photo20.jpg"> <span>Being blessed from nature...</span> </div>
+            <div class="polaroid" style="z-index: 5;"> <img src="photo13.jpg"> <span>That beautiful day...</span> </div>
+            <div class="polaroid" style="z-index: 6;"> <img src="photo22.jpg"> <span>Laughter and love...</span> </div>
+            <div class="polaroid" style="z-index: 7;"> <img src="photo11.jpg"> <span>My safe place...</span> </div>
+            <div class="polaroid" style="z-index: 8;"> <img src="photo10.jpg"> <span>First Mirror Photo...</span> </div>
+            <div class="polaroid" style="z-index: 9;"> <img src="photo21.jpg"> <span>Pure happiness...</span> </div>
+            <div class="polaroid" style="z-index: 10;"> <img src="photo8.jpg"> <span>Photo that make me feel good and special...</span> </div>
+            <div class="polaroid" style="z-index: 11;"> <img src="photo7.jpg"> <span>Pre wedding shoot😂...</span> </div>
+            <div class="polaroid" style="z-index: 12;"> <img src="photo25.jpg"> <span> contact that make me feel there is only 1 girl left in the world...</span> </div>
+        </div>
+
+        <button onclick="window.location.href='page10.html'" style="background: white; color: #ff4d6d; margin-top: 40px; border-radius: 50px; padding: 15px 30px; font-weight: bold;">
+            OUR JOURNEY →
+        </button>
+    </div>
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script> 
+
+    <script src="page9.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Love Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <style>
+        .quiz-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 600;
+        }
+        .option-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            margin-bottom: 10px;
+            color: white;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+        .option-btn.correct {
+            background: #4caf50 !important;
+            box-shadow: 0 0 15px #4caf50;
+        }
+        .option-btn.wrong {
+            background: #f44336 !important;
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="login-container page-fade-in">
+        <div class="glass-box">
+            <h2 class="romantic-title">The Quiz</h2>
+            <p class="subtitle">How well do you know us?</p>
+            
+            <div id="quiz" class="quiz-container">
+                <p id="question" class="question-text">Question goes here...</p>
+                <div id="options">
+                    </div>
+            </div>
+
+            <div id="quiz-win" class="hidden">
+                <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #ffccd5; margin: 20px 0;">
+                    You passed! You really do know my heart. ❤️
+                </p>
+                <button onclick="window.location.href='page6.html'" style="background: white; color: #ff4d6d;">
+                    READ MY POEM →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script>
+    <script src="page5.js"></script> 
+</body>
+</html>

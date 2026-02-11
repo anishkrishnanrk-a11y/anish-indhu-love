@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #d63384;
+        }
+
+        .game-container {
+            background: rgba(194, 46, 78, 0.9);
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3x4 Grid */
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .memory-card {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+
+        .memory-card.flip { transform: rotateY(180deg); }
+
+        .front-face, .back-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .front-face {
+            background: white;
+            transform: rotateY(180deg);
+        }
+
+        .front-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .back-face {
+            background: #ff4d6d;
+            color: white;
+            font-size: 24px;
+        }
+
+        #next-btn {
+            display: none;
+            background: white;
+            color: #c22e4e;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="game-container page-fade-in">
+        <h2 style="color: white; font-family: 'Dancing Script', cursive; font-size: 2rem;">Memory Match</h2>
+        <p style="color: #ffccd5;">Find all 6 pairs!</p>
+        
+        <div class="memory-game" id="game-board"></div>
+
+        <button id="next-btn" onclick="window.location.href='page5.html'">NEXT →</button>
+    </div>
+    
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script> 
+    <script src="page4.js"></script>
+</body>
+</html>

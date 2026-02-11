@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Favorite Person</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+</head>
+<body class="slideshow-bg">
+
+    <div class="login-container">
+        <div class="profile-wrapper">
+            <img src="profile.jpg" alt="Our Moment" class="profile-pic">
+        </div>
+        
+        <div class="glass-box">
+            <h1 class="romantic-title">Hello, Indhu</h1>
+            <p class="subtitle">Enter our secret code</p>
+            
+            <div class="input-group">
+                <input type="password" id="passwordField" placeholder="Your Password..." autocomplete="off">
+                <button onclick="checkPassword()" id="unlockBtn">Unlock ❤️</button>
+            </div>
+            
+            <p id="error-msg" class="hidden">Close, but not quite! Try again, Love. ✨</p>
+        </div>
+    </div>
+    <audio id="myAudio" loop>
+    <source src="your-song.mpeg" type="audio/mpeg">
+</audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

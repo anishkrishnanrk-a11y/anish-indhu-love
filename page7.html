@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Forever?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <style>
+        .final-heart {
+            font-size: 80px;
+            margin: 20px 0;
+            display: inline-block;
+            animation: heartBeat 1.2s infinite;
+        }
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .audio-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 1px solid var(--glass-border);
+        }
+        #play-hint {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: #ffccd5;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="login-container page-fade-in">
+        <div class="glass-box">
+            <div class="final-heart">❤️</div>
+            <h2 class="romantic-title">One Last Thing...</h2>
+            <p class="subtitle">Listen with your heart</p>
+
+            <div class="audio-container">
+                <button id="playBtn" onclick="toggleAudio()" style="background: white; color: #ff4d6d; width: 60px; height: 60px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <span id="icon">▶️</span>
+                </button>
+                <p id="play-hint">Tap to hear my voice</p>
+                <audio id="myVoice" src="voice.mp3"></audio>
+            </div>
+
+            <div id="proposal-area" class="hidden">
+                <h2 class="romantic-title" style="font-size: 2rem; margin-top: 20px;">Will you stay by my side forever?</h2>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button onclick="celebrate()" style="background: #4caf50; box-shadow: 0 5px 0 #2e7d32;">YES! ❤️</button>
+                    <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()" style="background: #f44336; box-shadow: 0 5px 0 #c62828;">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confetti" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:100;"></canvas>
+
+    
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script> 
+    <script src="page7.js"></script>
+</body>
+</html>

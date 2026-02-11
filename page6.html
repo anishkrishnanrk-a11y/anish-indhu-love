@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Heart for You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <style>
+        .poem-box {
+    /* Remove fixed height so it grows with the text */
+    min-height: auto; 
+    max-height: 60vh; /* Prevents it from touching the very top/bottom */
+    overflow-y: auto; /* Adds a scrollbar only if the text is massive */
+    
+    text-align: center; /* Center for a more romantic look */
+    font-family: 'Montserrat', sans-serif; /* Tamil looks cleaner in Sans-serif */
+    font-size: 1.2rem;
+    line-height: 2.2; /* CRUCIAL: Gives Tamil letters vertical "breath" */
+    color: #ffccd5;
+    margin-bottom: 20px;
+    padding: 10px;
+    white-space: pre-line; /* Keeps your line breaks from the JS */
+}
+
+/* Make the glass box wider to fit the poem width-wise */
+.glass-box {
+    width: 110%;
+    max-width: 600px;
+    padding: 40px 25px;
+    margin: auto;
+}
+
+/* Adjust the typewriter cursor for the bigger text */
+.cursor {
+    font-size: 1.4rem;
+    color: #fff;
+}
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .note-float {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: white;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="login-container page-fade-in">
+        <div class="glass-box">
+            <h2 class="romantic-title">A Message...</h2>
+            
+            <div class="poem-box">
+                <span id="typewriter"></span><span class="cursor">|</span>
+            </div>
+
+            <div id="final-btn" class="hidden">
+                <button onclick="window.location.href='page8.html'" style="background: white; color: #ff4d6d;">
+                    ONE LAST THING... ❤️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script>
+    <script src="page6.js"></script> 
+</body>
+</html>

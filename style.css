@@ -1,0 +1,160 @@
+:root {
+    --primary-pink: #ff4d6d;
+    --dark-pink: #c9184a;
+    --glass: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.login-container {
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 15;
+    margin-bottom: -50px; 
+    object-fit: cover;
+}
+.glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Add this shadow for a "glow" effect */
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Glassmorphism Box */
+.glass-box {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 70px 30px 40px;
+    border-radius: 35px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    color: white;
+}
+
+/* 3D Text Effect */
+.romantic-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 
+        0 2px 0 #bbb, 
+        0 4px 0 #999, 
+        0 6px 1px rgba(0,0,0,0.3), 
+        0 10px 15px rgba(0,0,0,0.4);
+}
+
+.subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #ffccd5;
+    margin-top: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin: 20px 0 15px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 20px;
+    border: none;
+    background: var(--primary-pink);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 0 var(--dark-pink); /* 3D Button */
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 var(--dark-pink);
+}
+
+.hidden { display: none; }
+body {
+    animation: fadeInPage 1.5s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; filter: blur(10px); }
+    to { opacity: 1; filter: blur(0); }
+}
+/* Balloon Container - Ensures they stay behind content but above background */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    width: 40px;
+    height: 50px;
+    background: rgba(255, 77, 109, 0.7); /* Pinkish-Red */
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    z-index: -1; /* Behind your glass-box but above background */
+    animation: floatUp 10s linear infinite;
+}
+
+/* The little string at the bottom */
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(20deg);
+        opacity: 0;
+    }
+}

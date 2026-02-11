@@ -1,0 +1,132 @@
+/* ===============================
+   EMOJI BASE STYLE
+================================ */
+.emoji {
+  position: absolute;
+  font-size: 38px;              /* NOT tiny */
+  opacity: 0.85;
+  animation-timing-function: ease-in-out;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ===============================
+   FLOATING HEARTS ❤️
+================================ */
+.heart {
+  animation: floatUp 8s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   BUTTERFLIES 🦋 (TRANSITION)
+================================ */
+.butterfly {
+  font-size: 42px;
+  animation: butterflyFly 3s ease-in-out forwards;
+}
+
+@keyframes butterflyFly {
+  0% {
+    transform: translate(-20vw, 40vh) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(120vw, -40vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   LOVE NOTES 💬
+================================ */
+.love-note {
+  position: absolute;
+  font-size: 18px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  animation: noteFade 10s ease forwards;
+  color: #fff;
+}
+
+@keyframes noteFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* ===============================
+   EMOJI BURST 🎉 (QUIZ / PROPOSAL)
+================================ */
+.burst {
+  animation: burstPop 1.6s ease-out forwards;
+}
+
+@keyframes burstPop {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translateY(-80px);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   SLOW EMOJI FALL ✨
+================================ */
+.fall {
+  animation: fallDown 12s linear forwards;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   CANDLE MODE SLOWDOWN
+================================ */
+body.candle-mode .emoji {
+  animation-duration: 14s !important;
+  opacity: 0.6;
+}

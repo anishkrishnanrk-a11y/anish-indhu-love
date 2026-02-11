@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Your Rewards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <style>
+        .coupon-container {
+            position: relative;
+            width: 250px;
+            height: 120px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .coupon-text {
+            color: #ff4d6d;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: crosshair;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="slideshow-bg">
+    <div class="login-container page-fade-in">
+        <div class="glass-box">
+            <h2 class="romantic-title">Rewards for You</h2>
+            <p class="subtitle">Scratch to reveal your coupons!</p>
+
+            <div class="coupon-container">
+                <div class="coupon-text">A Candlelight Dinner 🕯️</div>
+                <canvas id="scratch1" width="250" height="120"></canvas>
+            </div>
+
+            <div class="coupon-container">
+                <div class="coupon-text">One Big Hug 🫂</div>
+                <canvas id="scratch2" width="250" height="120"></canvas>
+            </div>
+
+            <div class="coupon-container">
+                <div class="coupon-text">A Movie of Your Choice 🎬</div>
+                <canvas id="scratch3" width="250" height="120"></canvas>
+            </div>
+
+            <button onclick="window.location.href='page11.html'" style="background: white; color: #ff4d6d; margin-top: 20px;">
+                SEE OUR TIMER →
+            </button>
+        </div>
+    </div>
+
+    
+<audio id="myAudio" loop>
+        <source src="your-song.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="music.js"></script>
+    <script src="page10.js"></script> 
+</body>
+</html>
