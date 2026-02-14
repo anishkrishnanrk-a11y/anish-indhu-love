@@ -1,43 +1,72 @@
-const audio = document.getElementById('myVoice');
-const playBtn = document.getElementById('playBtn');
-const icon = document.getElementById('icon');
-const proposalArea = document.getElementById('proposal-area');
+const voice = document.getElementById("myVoice");
+const playBtn = document.getElementById("playBtn");
+const icon = document.getElementById("icon");
+const playHint = document.getElementById("play-hint");
+const proposalArea = document.getElementById("proposal-area");
 
+// 1. Voice Note Controller
 function toggleAudio() {
-    if (audio.paused) {
-        audio.play();
+    if (voice.paused) {
+        voice.play();
         icon.innerText = "⏸️";
-        document.getElementById('play-hint').innerText = "Playing...";
+        playHint.innerText = "Playing...";
     } else {
-        audio.pause();
+        voice.pause();
         icon.innerText = "▶️";
+        playHint.innerText = "Paused";
     }
 }
 
-// Show proposal after audio ends or after 10 seconds
-audio.onended = () => {
-    proposalArea.classList.remove('hidden');
-    proposalArea.style.animation = "fadeInUp 1s ease forwards";
+// 2. Reveal Proposal when voice ends
+voice.onended = () => {
+    proposalArea.classList.remove("hidden");
+    proposalArea.style.opacity = "0";
+    proposalArea.style.transition = "opacity 1.5s ease";
+    setTimeout(() => { proposalArea.style.opacity = "1"; }, 100);
 };
 
-// If she tries to click NO, the button moves away
+// 3. The "No" button escape
 function moveNo() {
-    const noBtn = document.getElementById('noBtn');
+    const noBtn = document.getElementById("noBtn");
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 50);
-    noBtn.style.position = 'fixed';
-    noBtn.style.left = x + 'px';
-    noBtn.style.top = y + 'px';
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
 }
 
+// 4. Celebration Logic
 function celebrate() {
-    // Hide the No button and the text
-    document.querySelector('.glass-box').innerHTML = `
-        <h1 class="romantic-title">I Love You!</h1>
-        <p class="subtitle">Forever & Always, Indhu.</p>
-        <div class="final-heart">💖</div>
-    `;
+    // Stop the voice note if it's still playing
+    voice.pause();
     
-    // Trigger final "Impressive" Heart Explosion (Simulation)
-    setInterval(createHeart, 50); 
+    // Clear the box for the final message
+    document.querySelector('.glass-box').innerHTML = `
+        <h1 class="romantic-title">I Love You! ❤️</h1>
+        <p class="subtitle">Forever & Always, Indhu.</p>
+        <div class="final-heart" style="font-size: 80px; animation: heartBeat 1.2s infinite;">❤️</div>
+    `;
+
+    // Start Heart Explosion
+    setInterval(createHeart, 100);
 }
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.transition = "transform 3s linear, opacity 3s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.style.transform = `translateY(-120vh) rotate(${Math.random() * 360}deg)`;
+        heart.style.opacity = "0";
+    }, 100);
+
+    setTimeout(() => heart.remove(), 4000);
+}
+
+
